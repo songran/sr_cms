@@ -1,0 +1,60 @@
+<?php include APPLICATION_PATH."/application/views/public/header.html" ?>
+<div class="container-fluid">
+	<!-- Begin page heading -->
+	<h1 class="page-heading">文章 详情<small></small></h1>
+	<!-- End page heading -->
+
+	<!-- Begin breadcrumb -->
+	<ol class="breadcrumb default square rsaquo sm">
+		<li><a href="index.html"><i class="fa fa-home"></i></a></li>
+		<li><a href="#fakelink">管理后台</a></li>
+		<li class="active">文章列表</li>
+	</ol>
+	<!-- End breadcrumb -->
+	
+	
+	<div class="row">
+ 
+		  	<!-- BEGIN ADD NEW PRODUCT -->
+					<div class="panel with-nav-tabs panel-default">
+					  <div class="panel-heading">
+						 <a href="/code/index"><button class="btn btn-success">返回</button></a>
+					  </div>
+						<div id="panel-collapse-1" class="collapse in">
+							<form role="form"  action="/code/save" method="post">
+								<div class="panel-body">
+									<div class="tab-content">
+										<div class="tab-pane fade in active" id="panel-general">
+											<div class="form-group">
+												<label>标题</label>
+												<input type="text" name="title" class="form-control" placeholder=""  >
+												<p class="help-block"></p>
+											</div>
+											<div class="form-group">
+												<label>代码</label>
+												<textarea  name="content" class="summernote-lg"></textarea>
+											</div>
+											 
+ 										</div>
+										 
+									</div><!-- /.tab-content -->
+								</div><!-- /.panel-body -->
+								<div class="panel-footer">
+									<button class="btn btn-default">保存</button>
+								</div><!-- /.panel-footer -->
+							</form>
+						</div><!-- /.collapse in -->
+					</div><!-- /.panel .panel-success -->
+					<!-- END ADD NEW PRODUCT -->
+					
+				
+				</div><!-- /.container-fluid -->
+	    
+
+	   
+
+
+	</div><!-- /.row -->
+
+</div><!-- /.container-fluid -->
+<?php include APPLICATION_PATH."/application/views/public/footer.html" ?>

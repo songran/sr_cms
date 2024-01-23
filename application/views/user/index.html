@@ -1,0 +1,55 @@
+<?php include APPLICATION_PATH."/application/views/public/header.html" ?>
+<div class="container-fluid">
+	<!-- Begin page heading -->
+	<h1 class="page-heading">用户 <small></small></h1>
+	<!-- End page heading -->
+
+	<!-- Begin breadcrumb -->
+	<ol class="breadcrumb default square rsaquo sm">
+		<li><a href="index.html"><i class="fa fa-home"></i></a></li>
+		<li><a href="#fakelink">管理后台</a></li>
+		<li class="active">用户列表</li>
+	</ol>
+	<!-- End breadcrumb -->
+	
+	
+	<div class="row">
+
+
+
+		<!-- Begin table with avatar -->
+					<h4 class="small-title"></h4>
+					<div class="the-box no-border full">
+						<div class="table-responsive">
+							<table class="table table-th-block">
+								<thead>
+									<tr><th style="width: 30px;">id</th>
+										<th>name</th>
+										<th>email</th>
+									 
+									<th>创建时间</th></tr>
+								</thead>
+								<tbody>
+
+									<?php foreach($this->list as $key =>$val):?>
+									<tr>
+										<td><?php echo $val['id'];?></td>
+										<td><?php echo $val['userName'];?></td>
+										<td><?php echo $val['email'];?></td>
+										<td><?php echo $val['create_time'] ;?></td>
+									</tr>
+									<?php endforeach;?>
+							 
+								</tbody>
+							</table>
+						</div><!-- /.table-responsive -->
+					</div><!-- /.the-box -->
+					<!-- End table with avatar -->
+ 
+		 
+
+		<?php echo $this->page;?>
+	</div><!-- /.row -->
+
+</div><!-- /.container-fluid -->
+<?php include APPLICATION_PATH."/application/views/public/footer.html" ?>

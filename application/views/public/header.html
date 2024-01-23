@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Sentir, Responsive admin and dashboard UI kits template">
+		<meta name="keywords" content="admin,bootstrap,template,responsive admin,dashboard template,web apps template">
+		<meta name="author" content="Ari Rusmanto, Isoh Design Studio, Warung Themes">
+		<title>管理后台</title>
+ 
+		<link href="<?php echo BASE_URL;?>/public/assets/css/bootstrap.min.css" rel="stylesheet">		
+		<!-- PLUGINS CSS -->
+		<link href="<?php echo BASE_URL;?>/public/assets/plugins/weather-icon/css/weather-icons.min.css" rel="stylesheet">
+		<link href="<?php echo BASE_URL;?>/public/assets/plugins/prettify/prettify.min.css" rel="stylesheet">
+		<link href="<?php echo BASE_URL;?>/public/assets/plugins/magnific-popup/magnific-popup.min.css" rel="stylesheet">
+		<link href="<?php echo BASE_URL;?>/public/assets/plugins/owl-carousel/owl.carousel.min.css" rel="stylesheet">
+		<link href="<?php echo BASE_URL;?>/public/assets/plugins/owl-carousel/owl.theme.min.css" rel="stylesheet">
+		<link href="<?php echo BASE_URL;?>/public/assets/plugins/owl-carousel/owl.transitions.min.css" rel="stylesheet">
+		<link href="<?php echo BASE_URL;?>/public/assets/plugins/chosen/chosen.min.css" rel="stylesheet">
+		<link href="<?php echo BASE_URL;?>/public/assets/plugins/icheck/skins/all.css" rel="stylesheet">
+		<link href="<?php echo BASE_URL;?>/public/assets/plugins/datepicker/datepicker.min.css" rel="stylesheet">
+		<link href="<?php echo BASE_URL;?>/public/assets/plugins/timepicker/bootstrap-timepicker.min.css" rel="stylesheet">
+		<link href="<?php echo BASE_URL;?>/public/assets/plugins/validator/bootstrapValidator.min.css" rel="stylesheet">
+		<link href="<?php echo BASE_URL;?>/public/assets/plugins/summernote/summernote.min.css" rel="stylesheet">
+		<link href="<?php echo BASE_URL;?>/public/assets/plugins/markdown/bootstrap-markdown.min.css" rel="stylesheet">
+		<link href="<?php echo BASE_URL;?>/public/assets/plugins/datatable/css/bootstrap.datatable.min.css" rel="stylesheet">
+		<link href="<?php echo BASE_URL;?>/public/assets/plugins/morris-chart/morris.min.css" rel="stylesheet">
+		<link href="<?php echo BASE_URL;?>/public/assets/plugins/c3-chart/c3.min.css" rel="stylesheet">
+		<link href="<?php echo BASE_URL;?>/public/assets/plugins/slider/slider.min.css" rel="stylesheet">
+		<link href="<?php echo BASE_URL;?>/public/assets/plugins/salvattore/salvattore.css" rel="stylesheet">
+		<link href="<?php echo BASE_URL;?>/public/assets/plugins/toastr/toastr.css" rel="stylesheet">
+		<link href="<?php echo BASE_URL;?>/public/assets/plugins/fullcalendar/fullcalendar/fullcalendar.css" rel="stylesheet">
+		<link href="<?php echo BASE_URL;?>/public/assets/plugins/fullcalendar/fullcalendar/fullcalendar.print.css" rel="stylesheet" media="print">
+		<!-- MAIN CSS (REQUIRED ALL PAGE)-->
+		<link href="<?php echo BASE_URL;?>/public/assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+		<link href="<?php echo BASE_URL;?>/public/assets/css/style.css" rel="stylesheet">
+		<link href="<?php echo BASE_URL;?>/public/assets/css/style-responsive.css" rel="stylesheet">
+		 
+	</head>
+ 
+	<body class="tooltips">
+	 
+		<div class="wrapper">
+			<!-- top-navbar -->
+			<div class="top-navbar">
+				<div class="top-navbar-inner">
+					
+					<!-- Begin Logo brand -->
+					<div class="logo-brand">
+						<img src="<?php echo BASE_URL;?>/public/assets/img/sentir-logo-primary.png" alt="Sentir logo">
+						<!--<a href="#"><img src="<?php echo BASE_URL;?>/public/assets/img/sentir-logo-primary.png" alt="Sentir logo"></a>-->
+					</div><!-- /.logo-brand -->
+					<!-- End Logo brand -->
+					
+					<div class="top-nav-content">
+						
+						<!-- Begin button sidebar left toggle -->
+						<div class="btn-collapse-sidebar-left">
+							<i class="fa fa-bars"></i>
+						</div><!-- /.btn-collapse-sidebar-left -->
+						<!-- End button sidebar left toggle -->
+						
+						<!-- Begin button sidebar right toggle -->
+						<div class="btn-collapse-sidebar-right">
+							<i class="fa fa-bullhorn"></i>
+						</div><!-- /.btn-collapse-sidebar-right -->
+						<!-- End button sidebar right toggle -->
+						
+						<!-- Begin button nav toggle -->
+						<div class="btn-collapse-nav" data-toggle="collapse" data-target="#main-fixed-nav">
+							<i class="fa fa-plus icon-plus"></i>
+						</div><!-- /.btn-collapse-sidebar-right -->
+						<!-- End button nav toggle -->
+						
+						
+						<!-- Begin user session nav -->
+						<ul class="nav-user navbar-right">
+							<li class="dropdown">
+							  <a href="#fakelink" class="dropdown-toggle" data-toggle="dropdown">
+								<img src="<?php echo BASE_URL;?>/public/assets/img/avatar/avatar.jpg" class="avatar img-circle" alt="Avatar">
+								Hi, <strong>管理员</strong>
+							  </a>
+							  <ul class="dropdown-menu square primary margin-list-rounded with-triangle">
+								 
+ 								<li><a href="<?php echo BASE_URL;?>/admin/logout">退出</a></li>
+							  </ul>
+							</li>
+						</ul>
+						<!-- End user session nav -->
+						
+						 
+					</div><!-- /.top-nav-content -->
+				</div><!-- /.top-navbar-inner -->
+			</div><!-- /.top-navbar -->
+
+
+			<!-- side-left -->
+			<div class="sidebar-left sidebar-nicescroller">
+				<ul class="sidebar-menu">
+					<li>
+						<a href="<?php echo BASE_URL;?>/index/index">
+							<i class="fa fa-dashboard icon-sidebar"></i>首页
+						</a>
+					</li>
+
+					<li>
+						<a href="#fakelink">
+							<i class="fa fa-desktop icon-sidebar"></i>
+							<i class="fa fa-angle-right chevron-icon-sidebar"></i>
+							用户
+							<span class="badge badge-warning span-sidebar">2</span>
+							</a>
+						<ul class="submenu">
+							<li><a href="<?php echo BASE_URL;?>/auth/index"">权限列表<span class="label label-success span-sidebar"></span></a></li>
+							<li><a href="<?php echo BASE_URL;?>/user/index"">用户列表<span class="label label-success span-sidebar"></span></a></li>
+							 
+						</ul>
+					</li>
+
+
+					<li>
+						<a href="#fakelink">
+							<i class="fa fa-desktop icon-sidebar"></i>
+							<i class="fa fa-angle-right chevron-icon-sidebar"></i>
+							内容管理
+							<span class="badge badge-warning span-sidebar">2</span>
+							</a>
+						<ul class="submenu">
+							<li><a href="<?php echo BASE_URL;?>/code/index">代码库<span class="label label-success span-sidebar"></span></a></li>
+							 
+						</ul>
+					</li>
+					 
+				 
+				</ul>
+			</div><!-- /.sidebar-left -->
+			 				
+			<!-- side-right -->
+				<div class="sidebar-right right-sidebar-nicescroller"></div>
+			<!-- /.side-right -->
+
+			<!-- BEGIN PAGE CONTENT -->
+			<div class="page-content">

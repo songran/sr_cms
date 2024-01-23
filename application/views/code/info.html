@@ -1,0 +1,31 @@
+<?php include APPLICATION_PATH."/application/views/public/header.html" ?>
+<div class="container-fluid">
+	<!-- Begin page heading -->
+	<h1 class="page-heading">文章 详情<small></small></h1>
+	<!-- End page heading -->
+
+	<!-- Begin breadcrumb -->
+	<ol class="breadcrumb default square rsaquo sm">
+		<li><a href="index.html"><i class="fa fa-home"></i></a></li>
+		<li><a href="#fakelink">管理后台</a></li>
+		<li class="active">文章列表</li>
+	</ol>
+	<!-- End breadcrumb -->
+	
+	
+	<div class="row">
+ 			<a href="/code/index"><button class="btn btn-success">返回</button></a>
+		 
+			<div class="the-box no-border store-list">
+				  <?php echo $info['title']?>
+				  <?php echo $info['content']?>
+		    </div><!-- /.the-box no-border -->
+	    
+
+	   
+
+
+	</div><!-- /.row -->
+
+</div><!-- /.container-fluid -->
+<?php include APPLICATION_PATH."/application/views/public/footer.html" ?>
