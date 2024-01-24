@@ -71,7 +71,7 @@
 							<i class="fa fa-plus icon-plus"></i>
 						</div><!-- /.btn-collapse-sidebar-right -->
 						<!-- End button nav toggle -->
-						
+					 
 						
 						<!-- Begin user session nav -->
 						<ul class="nav-user navbar-right">
@@ -93,44 +93,41 @@
 				</div><!-- /.top-navbar-inner -->
 			</div><!-- /.top-navbar -->
 
-
+			 
 			<!-- side-left -->
 			<div class="sidebar-left sidebar-nicescroller">
 				<ul class="sidebar-menu">
-					<li>
-						<a href="<?php echo BASE_URL;?>/index/index">
-							<i class="fa fa-dashboard icon-sidebar"></i>首页
-						</a>
-					</li>
-
-					<li>
-						<a href="#fakelink">
-							<i class="fa fa-desktop icon-sidebar"></i>
-							<i class="fa fa-angle-right chevron-icon-sidebar"></i>
-							用户
-							<span class="badge badge-warning span-sidebar">2</span>
-							</a>
-						<ul class="submenu">
-							<li><a href="<?php echo BASE_URL;?>/auth/index"">权限列表<span class="label label-success span-sidebar"></span></a></li>
-							<li><a href="<?php echo BASE_URL;?>/user/index"">用户列表<span class="label label-success span-sidebar"></span></a></li>
-							 
-						</ul>
-					</li>
-
-
-					<li>
-						<a href="#fakelink">
-							<i class="fa fa-desktop icon-sidebar"></i>
-							<i class="fa fa-angle-right chevron-icon-sidebar"></i>
-							内容管理
-							<span class="badge badge-warning span-sidebar">2</span>
-							</a>
-						<ul class="submenu">
-							<li><a href="<?php echo BASE_URL;?>/code/index">代码库<span class="label label-success span-sidebar"></span></a></li>
-							 
-						</ul>
-					</li>
+					<?php foreach($_SESSION['caidan']as $key =>$val):?>
 					 
+					<?php if($val):?>
+					<li>
+						<a href="<?php echo $val['url']; ?>">
+							<i class="fa fa-desktop icon-sidebar"></i>
+							<i class="fa fa-angle-right chevron-icon-sidebar"></i>
+							<?php echo $val['title'];?>
+							<span class="badge badge-warning span-sidebar"></span>
+							</a>
+						<?php if($val['children']):?>
+						<ul class="submenu">
+							<?php foreach($val['children'] as $k=>$v):?>
+							
+							<li>  
+								<a href="<?php echo $v['url'];?>">
+								<?php echo $v['title'];?>
+								<span class="label label-success span-sidebar"></span>
+								</a>
+							</li>
+							<?php endforeach;?>
+						</ul>
+						<?php endif;?>
+						 
+
+					</li>
+					<?php endif;?>
+
+					<?php endforeach;?>
+
+					
 				 
 				</ul>
 			</div><!-- /.sidebar-left -->

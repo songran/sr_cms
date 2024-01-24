@@ -10,12 +10,34 @@ class AdminController extends Yaf_Controller_Abstract {
     public function init() {
         $this->session    = Yaf_Session::getInstance();
         $this->adminmodel = new AdminModel();
-
         $actionname = $this->getRequest()->getActionName();
 
-        if (!loginstatus() && !in_array($actionname, $this->nologin())) {
-            //$this->redirect(BASE_URL.'/admin/index');
-        }
+        // if (!loginstatus() && !in_array($actionname, $this->nologin())) {
+        //     //$this->redirect(BASE_URL.'/admin/index');
+        // }    
+
+    }
+    /**
+     * 菜单
+     * @Author   SongRan
+     * @DateTime 2024-01-24
+     * @return   [type]     [description]
+     */
+    public function caidan(){
+        $authMod = new AuthModel();
+        $list = $authMod->getlist(['is_show'=>1]); 
+        
+        $tree = getTree($list);
+        return $tree; 
+    }
+
+     public function testAction(){
+       echo "<pre>";
+       $list = $this->caidan();
+       echo "<pre>";
+       print_r($list);
+       // print_r($this->session);
+       exit; 
     }
 
     /**
@@ -42,6 +64,8 @@ class AdminController extends Yaf_Controller_Abstract {
 
         if ($date['username'] == $username && $date['password'] == md5($password)) {
             $this->session->admin = true;
+
+            $this->session->caidan = $this->caidan() ;
             $this->redirect(BASE_URL);
         } else {
             $this->redirect(BASE_URL . '/admin/index');

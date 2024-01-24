@@ -1,0 +1,65 @@
+<?php include APPLICATION_PATH."/application/views/public/header.html" ?>
+<div class="container-fluid">
+	<!-- Begin page heading -->
+	<h1 class="page-heading">文章 <small></small></h1>
+	<!-- End page heading -->
+
+	<!-- Begin breadcrumb -->
+	<ol class="breadcrumb default square rsaquo sm">
+		<li><a href="index.html"><i class="fa fa-home"></i></a></li>
+		<li><a href="#fakelink">管理后台</a></li>
+		<li class="active">文章列表</li>
+	</ol>
+	<!-- End breadcrumb -->
+	
+	
+	<div class="row">
+		<div class="collapse navbar-collapse" id="main-fixed-nav">
+		 		 
+				<a href="/auth/add" class="navbar-form navbar-left"><button class="btn btn-success">新增</button></a>
+				 
+		</div>
+		<div class="the-box no-border full">
+				 
+ 				<div class="category-wrap">
+
+ 					<?php foreach($this->list as $key =>$val):?>
+					<ul class="list-unstyled">
+						
+						<li>
+							<div class="checkbox">
+							     <label><?php echo $val['title'];?> </label>
+								 
+								 <label>
+									(<a href="/auth/edit?id=<?php echo $val['id'];?>">修改</a>|
+									<a href="/auth/del?id=<?php echo $val['id'];?>">删除</a>)
+								</label>
+							  
+							</div>
+							<?php if($val['children']):?>
+							<ul> 
+								<?php foreach($val['children'] as $k=>$v):?>
+								<li>
+									<div class="checkbox">
+									  <label>
+										<?php echo $v['title'];?>
+										(<a href="/auth/edit?id=<?php echo $v['id'];?>">修改</a>|
+										<a href="/auth/del?id=<?php echo $v['id'];?>">删除</a>)
+									  </label>
+									</div>
+								</li>	
+								<?php endforeach;?> 
+								 
+							</ul>
+							<?php endif;?>
+						</li>
+					</ul>
+					<?php endforeach;?>
+
+
+				</div><!-- /.category-wrap -->
+						 	 
+		</div><!-- /.row -->
+
+</div><!-- /.container-fluid -->
+<?php include APPLICATION_PATH."/application/views/public/footer.html" ?>

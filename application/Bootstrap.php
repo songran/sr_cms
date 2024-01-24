@@ -47,6 +47,9 @@ class Bootstrap extends Yaf_Bootstrap_Abstract{
 		//注册一个插件
 		//Yaf_Registry::set('CJSON', new CJSON());
 	}
+	public function _initSession(Yaf_Dispatcher $dispatcher) { 
+     
+    } 
 
 	public function _initRoute(Yaf_Dispatcher $dispatcher) {
 		

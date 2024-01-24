@@ -1,0 +1,79 @@
+<?php include APPLICATION_PATH."/application/views/public/header.html" ?>
+<div class="container-fluid">
+	<!-- Begin page heading -->
+	<h1 class="page-heading">文章 详情<small></small></h1>
+	<!-- End page heading -->
+
+	<!-- Begin breadcrumb -->
+	<ol class="breadcrumb default square rsaquo sm">
+		<li><a href="index.html"><i class="fa fa-home"></i></a></li>
+		<li><a href="#fakelink">管理后台</a></li>
+		<li class="active">文章列表</li>
+	</ol>
+	<!-- End breadcrumb -->
+	
+	
+	<div class="row">
+ 
+		  	<!-- BEGIN ADD NEW PRODUCT -->
+					<div class="panel with-nav-tabs panel-default">
+					  <div class="panel-heading">
+						  <a href="/auth/index"><button class="btn btn-success">返回</button></a>
+					  </div>
+						<div id="panel-collapse-1" class="collapse in">
+							<form role="form"  action="/auth/save" method="post">
+								<div class="panel-body">
+									<div class="tab-content">
+										<div class="tab-pane fade in active" id="panel-general">
+											<div class="form-group">
+												<label>标题</label>
+												<input type="text" name="title" class="form-control" placeholder="" value="<?php echo $info['title'];?>">
+												<p class="help-block"></p>
+											</div>
+											<div class="form-group">
+												<label>排序</label>
+												<input type="text" name="sort_num" class="form-control" placeholder="" value="<?php echo $info['sort_num'];?>">
+												<p class="help-block"></p>
+											</div>
+											<div class="form-group">
+												<label>跳转地址</label>
+												<input type="text" name="url" class="form-control" placeholder="" value="<?php echo $info['url'];?>">
+												<p class="help-block"></p>
+											</div>
+											<div class="form-group">
+												<label>是否展示菜单</label>
+												<input type="text" name="is_show" class="form-control" placeholder="" value="<?php echo $info['is_show'];?>">
+												<p class="help-block"></p>
+											</div>
+											<div class="form-group">
+												<label>父id</label>
+												<input type="text" name="pid" class="form-control" placeholder="" value="<?php echo $info['pid'];?>">
+												<p class="help-block"></p>
+											</div>
+											 
+
+											 
+											<input type="hidden" name="id" value="<?php echo $info['id'];?>">
+										</div>
+										 
+									</div><!-- /.tab-content -->
+								</div><!-- /.panel-body -->
+								<div class="panel-footer">
+									<button class="btn btn-default">保存</button>
+								</div><!-- /.panel-footer -->
+							</form>
+						</div><!-- /.collapse in -->
+					</div><!-- /.panel .panel-success -->
+					<!-- END ADD NEW PRODUCT -->
+					
+				
+				</div><!-- /.container-fluid -->
+	    
+
+	   
+
+
+	</div><!-- /.row -->
+
+</div><!-- /.container-fluid -->
+<?php include APPLICATION_PATH."/application/views/public/footer.html" ?>

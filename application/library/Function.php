@@ -60,6 +60,30 @@ function page($url,$page,$count,$offset = 20,$status='')
     exit;
 }
 /**
+ * 无限极分类
+ * @Author   SongRan
+ * @DateTime 2024-01-24
+ */
+function getTree($items,$id='id',$pid='pid',$son = 'children')
+{
+      $tree   = array(); //格式化的树
+      $tmpMap = array(); //临时扁平数据
+        
+      foreach ($items as $item) {
+        $tmpMap[$item[$id]] = $item;
+       // $tmpMap[$item[$id]][$son] =[]; 
+      }    
+      foreach ($items as $item) {
+        if (isset($tmpMap[$item[$pid]])) {
+          $tmpMap[$item[$pid]][$son][] = &$tmpMap[$item[$id]];
+        } else {
+          $tree[] = &$tmpMap[$item[$id]];
+        }
+      }
+      unset($tmpMap);
+      return $tree;
+}
+/**
  * 获取当前登陆状态
  * @return bool
  */
@@ -99,9 +123,6 @@ function getSex($sex=0)
             break;
     }
     return $name;
-     
-
-
 }
 
 //生成缓存key

@@ -57,7 +57,7 @@ class CodeModel {
      * @param    [type]     $options [description]
      */
     public function addCode($options) {
-        $options['create_time'] = time();
+        $options['create_time'] =  date('Y-m-d H:i:s',time());
         $this->db->insert('s_code', $options);
         return $this->db->insert_id();
     }
@@ -71,7 +71,6 @@ class CodeModel {
      * @return   [type]              [description]
      */
     public function updateCode($id, $options) {
-        $options['update_time'] = time();
         return $this->db->update('s_code', $options, "id={$id}");
     }
     /**

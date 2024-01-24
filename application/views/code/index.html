@@ -36,7 +36,7 @@
 									<tr>
 										<td><?php echo $val['id'];?></td>
 										<td> <a href="/code/info?id=<?php echo $val['id'];?>"><?php echo $val['title'];?></a></td>
-										<td><?php echo date('Y-m-d H:i',$val['create_time']);?></td>
+										<td><?php echo  $val['create_time'];?></td>
 										<td><a href="/code/edit?id=<?php echo $val['id'];?>">修改</a>|
 											<a href="/code/del?id=<?php echo $val['id'];?>">删除</a>
 										</td>
